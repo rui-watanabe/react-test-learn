@@ -16,10 +16,10 @@ const RenderInput = ({ outputConsole}) => {
       <input
         type="text"
         placeholder="Enter"
-        value="input"
+        value={input}
         onChange={updateValue}
       />
-      <button onClick={outputvalue}>Console</button>
+      <button onClick={outputValue}>Console</button>
     </div>
   );
 };
