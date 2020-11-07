@@ -22,3 +22,22 @@ describe("Input form onChange event", () => {
     expect(inputValue.value).toBe("test");
   });
 })
+
+describe("Console button conditionally triggered", () => {
+  it("Should not trigger output function", () => {
+      //moch function(wether function calls)
+      const outputConsole = jest.fn();
+      render(<RenderInput outputConsole={outputConsole} />);
+      userEvent.click(screen.getByRole("button"));
+      expect(outputConsole).not.toHaveBeenCalled();
+  })
+
+  it("Should trigger output function", () => {
+    const outputConsole = jest.fn();
+    render(<RenderInput outputConsole={outputConsole} />);
+    const inputValue = screen.getByPlaceholderText("Enter");
+    userEvent.type(inputValue, "test");
+    userEvent.click(screen.getByRole("button"));
+    expect(outputConsole).toHaveBeenCalledTimes(1);
+})
+})
