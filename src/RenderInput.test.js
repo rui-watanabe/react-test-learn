@@ -8,5 +8,6 @@ describe("Rendering", () => {
   it("Should render all the elements correctly", () => {
     render(<RenderInput />)
     expect(screen.getByRole("button")).toBeTruthy();
+    expect(screen.getByPlaceholderText("Enter").toBeTruthy)
   })
 })
