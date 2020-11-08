@@ -23,7 +23,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <RenderInput outputConsole={output} />{" "}
-        {/* <FrameworkList frameworks={data} />{" "} */}
+        <FrameworkList frameworks={data} />{" "}
         <UseEffectRender />
         <p>
           Edit <code> src / App.js </code> and save to reload.{" "}
