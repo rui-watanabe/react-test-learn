@@ -1,5 +1,5 @@
 import React from "react";
-import { findByText, render, screen} from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import UseEffectRender from "./UseEffectRender";
 
 describe("useEffect Rendering", () => {
