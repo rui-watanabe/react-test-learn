@@ -39,4 +39,18 @@ describe("Redux Async API Mocking", () => {
     userEvent.click(screen.getByText("FetchJSON"));
     expect(await screen.findByText("Bred dummy")).toBeInTheDocument()
   })
+  it("Should display anonymous in h3 (Fetch fail)",async () => {
+    server.use(
+      rest.get("https://jsonplaceholder.typicode.com/users/1", (req, res, ctx) => {
+      return res(ctx.status(404))
+    }));
+    render(
+      <Provider store={store}>
+        <ReduxAsync />
+      </Provider>
+    );
+    expect(screen.queryByRole("heading")).toBeNull();
+    userEvent.click(screen.getByText("FetchJSON"));
+    expect(await screen.findByText("anonymous")).toBeInTheDocument()
+  })
 })
