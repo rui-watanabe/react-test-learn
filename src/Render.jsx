@@ -7,7 +7,7 @@ const Render = () => {
       <input type="text" />
       <button>Click1</button>
       <button>Click2</button>
-      <p>Udemy</p>
+      <p>Learn</p>
       <span data-testid="testId">@React</span>
     </div>
   );
