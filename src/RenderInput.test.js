@@ -10,7 +10,7 @@ describe("Rendering", () => {
   it("Should render all the elements correctly", () => {
     render(<RenderInput />)
     expect(screen.getByRole("button")).toBeTruthy();
-    expect(screen.getByPlaceholderText("Enter").toBeTruthy);
+    expect(screen.getByPlaceholderText("Enter").toBeTruthy());
   })
 })
 
@@ -25,7 +25,7 @@ describe("Input form onChange event", () => {
 
 describe("Console button conditionally triggered", () => {
   it("Should not trigger output function", () => {
-      //moch function(wether function calls)
+      //mock function(wether function calls)
       const outputConsole = jest.fn();
       render(<RenderInput outputConsole={outputConsole} />);
       userEvent.click(screen.getByRole("button"));
